@@ -1,0 +1,35 @@
+Procédure de test des différents éléments du robot :
+
+1) Test de la détection d'obstacles
+
+- Ouvrir l'IDE Arduino et le projet "test_obstacle"
+- Relier la carte Arduino à la Raspberry (cable USB) et téléverser le programme (le servo-moteur doit commencer à bouger)
+- Vérifier le bon fonctionnement du capteur en vérifiant ses valeurs via l'IDE Arduino :
+	- Outils
+	- Moniteur série
+
+2) Test des encodeurs
+
+- Ouvrir et téléverser le projet "encodeurs" sur l'Arduino
+- Vérifier le bon fonctionnement des encodeurs en vérifiant ses valeurs via l'IDE Arduino (il faut bouger les roues arrières à la main) :
+	- Outils
+	- Moniteur série
+
+
+3) Test de la caméra, des moteurs et de la liaison entre les deux cartes
+
+- Ouvrir et téléverser le projet "slave" sur l'Arduino
+- Ouvrir le fichier "raspi_serial.py" sur l'IDE Pyhton Thonny
+- Allumer la batterie sous le robot et enclencher l'interrupteur à l'arrière de celui-ci, les LEDs doivent s'allumer
+- Lancer le programme. Le robot doit prendre une photo, avancer pendant 1 seconde, s'arrêter 2 secondes puis reculer pendant 1 seconde
+- Vérifier que la photo "test_photo.jpg" a bien été créée dans le dossier "Test_robot". La supprimer pour les futurs tests
+
+
+
+NOTE : 
+
+Un dossier test_traitement_image est également proposé. Deux codes python sont proposés.
+"line_detection.py" retourne le barycentre de la plus grande "zone blanche" de l'image d'entrée.
+Le couple "photo_test.jpg"/"output_photo_test.jpg" permet de voir l'évolution entre l'image d'entrée et l'image après traitement sur laquelle est effectuée la détection de contours.
+
+Un code de "corner detection" ainsi qu'un set d'images/photos de test est également disponible.
